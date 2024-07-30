@@ -9,11 +9,17 @@ public class EduClassExtends {
 
 class Mammal {
     String Kinds;
-    protected String name;
+    protected String name = "테스트";
+//    final protected String name = "테스트"; // 클래스의 필드에 final을 줄 경우 상수로 바뀐다
 
     public Mammal() {
         this.Kinds = "포유류";
     }
+
+    // 메소드에 final을 줄 경우 오버라이딩이 불가능하다
+//    final public void printInfo() {
+//        System.out.println("Kinds : " + this.Kinds);
+//    }
 
     public void printInfo() {
         System.out.println("Kinds : " + this.Kinds);
@@ -29,6 +35,7 @@ class Whale extends Mammal {
     }
 
     // 오버라이드 : 부모에서 정한 요소를 자식클래스에서 재 정의 하는 것
+    // 오버라이드시 부모요소와 메소드명, 파라미터, 리턴타입이 모두 같아야함
     @Override
     public void printInfo() {
         super.printInfo(); // 부모의 클래스도 같이 처리하고 싶을 때 super사용 super를 쓰면 부모class에 접근이 가능
